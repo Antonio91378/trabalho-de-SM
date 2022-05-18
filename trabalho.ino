@@ -1,6 +1,8 @@
+#define PIN_RES 14
+#define PIN_VENT 15
 void setup() {
-  // put your setup code here, to run once:
-
+  pinMode(PIN_RES, OUTPUT);
+  pinMode(PIN_VENT, OUTPUT);
 }
 
 void loop() {
