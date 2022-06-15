@@ -4,7 +4,7 @@ import { onValue, ref, set } from "firebase/database";
 import { Chart } from "react-google-charts";
 
 interface GraficoProps {
-  children: React.ReactNode;
+  children: React.ReactNode; 
 }
 
 const Grafico: React.FC<GraficoProps> = () => {
