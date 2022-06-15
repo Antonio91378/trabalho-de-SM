@@ -7,8 +7,8 @@ interface GraficoProps {
   children: React.ReactNode;
 }
 
-const Grafico: React.FC<GraficoProps> = ({ children }) => {
-  const [dado, setDado] = useState([
+const Grafico: React.FC<GraficoProps> = () => {
+  const [dado, setDado] = useState<any>([
     ["Tempo", "SP", "PV", "MV"],
     ["", 0, 0, 0],
   ]);
@@ -22,9 +22,14 @@ const Grafico: React.FC<GraficoProps> = ({ children }) => {
       for (i = 1; i <= jsonSize; i++) {
         var array1 = ["Tempo", "SP", "PV", "MV"];
         var array2 = data1.frame1;
-        setDado([array1, array2]);
+        var vetores = [array1, array2]
+        var array3 = data1.frame2;
+        vetores = vetores.concat([array3]);
+        console.log(vetores);
+        setDado(vetores);
+        
       }
-    });
+    });                                                                                                                                                                                                             
   }, []);
 
   return (
