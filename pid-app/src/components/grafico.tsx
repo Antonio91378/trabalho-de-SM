@@ -19,15 +19,11 @@ const Grafico: React.FC<GraficoProps> = () => {
       const data1 = snapshot.val();
       var jsonSize = Object.keys(data1).length;
       var i = 0;
+      var array1 = ["Tempo", "SP", "PV", "MV"];
+      var vetores = [array1];
       for (i = 1; i <= jsonSize; i++) {
-        var array1 = ["Tempo", "SP", "PV", "MV"];
-        var array2 = data1.frame1;
-        var vetores = [array1, array2]
-        var array3 = data1.frame2;
-        vetores = vetores.concat([array3]);
-        console.log(vetores);
+        vetores = vetores.concat([data1[`frame${i}`]]);
         setDado(vetores);
-        
       }
     });                                                                                                                                                                                                             
   }, []);
