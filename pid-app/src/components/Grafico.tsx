@@ -32,7 +32,7 @@ const Grafico: React.FC<GraficoProps> = () => {
     <div id="grafico">
       <Chart
         chartType="LineChart"
-        width="100%"
+        width="800px"
         height="300px"
         data={dado}
         options={options}

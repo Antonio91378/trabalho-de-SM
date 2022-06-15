@@ -1,4 +1,5 @@
 import Box from "./components/Box.tsx";
+import SubBox from "./components/SubBox.tsx";
 import Container from "./components/Container.tsx";
 import Intro from "./components/Intro.tsx";
 import ProtocolChoose from "./components/protocolChoose.tsx";
@@ -8,10 +9,14 @@ function App() {
   return (
     <div className="App">
       <Container>
-        <Intro />
+        <Intro HeroText="Controle PID com esp32" />
         <Box>
-          <ProtocolChoose />
-          <Form />
+          <SubBox>
+            <ProtocolChoose />
+          </SubBox>
+          <SubBox>
+            <Form />
+          </SubBox>
         </Box>
         <Box>
           <Grafico />
