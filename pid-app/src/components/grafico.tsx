@@ -17,11 +17,13 @@ const Grafico: React.FC<GraficoProps> = ({ children }) => {
     const ref1 = ref(database, "frames");
     onValue(ref1, (snapshot) => {
       const data1 = snapshot.val();
-      console.log(data1);
-      if (data1.frame == null) {
-        return <div>Loading</div>;
+      var jsonSize = Object.keys(data1).length;
+      var i = 0;
+      for (i = 1; i <= jsonSize; i++) {
+        var array1 = ["Tempo", "SP", "PV", "MV"];
+        var array2 = data1.frame1;
+        setDado([array1, array2]);
       }
-      setDado([["Tempo", "SP", "PV", "MV"], data1.frame]);
     });
   }, []);
 
@@ -37,8 +39,6 @@ const Grafico: React.FC<GraficoProps> = ({ children }) => {
     </div>
   );
 };
-
-// export const data =
 
 export const options = {
   title: "Gráfico PID [Graus célsius pelo tempo]",
