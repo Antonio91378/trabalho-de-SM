@@ -4,8 +4,6 @@ import Intro from "./components/Intro.tsx";
 import ProtocolChoose from "./components/protocolChoose.tsx";
 import Form from "./components/Form.tsx";
 import Grafico from "./components/Grafico.tsx";
-import { Chart } from "react-google-charts";
-import { data, options } from "./components/Grafico.tsx";
 function App() {
   return (
     <div className="App">
@@ -16,15 +14,7 @@ function App() {
           <Form />
         </Box>
         <Box>
-          <Grafico>
-            <Chart
-              chartType="LineChart"
-              width="100%"
-              height="300px"
-              data={data}
-              options={options}
-            />
-          </Grafico>
+          <Grafico />
         </Box>
       </Container>
     </div>
