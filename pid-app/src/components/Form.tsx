@@ -50,7 +50,7 @@ const FormInputs: React.FC<FormInputsProps> = ({}) => {
           </div>
         </div>
         <div className="primary-btn" id="input-save">
-          <button type="submit">Salvar</button>
+          <p>Salvar</p>
         </div>
       </form>
     </div>
