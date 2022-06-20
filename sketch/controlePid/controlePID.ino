@@ -3,14 +3,6 @@
   50 -> desligar
   100 -> aquecendo(max)
 */
-#include <IOXhop_FirebaseESP32.h>
-#include <IOXhop_FirebaseStream.h>
-
-#define WIFI_SSID "Nilha 2G"                  //substitua "Nome_do_seu_wifi" pelo nome da sua rede wifi 
-#define WIFI_PASSWORD "nilha123"             //substitua "Senha_do_seu_wifi" pela senha da sua rede wifi 
-#define FIREBASE_HOST "https://pid-esp32-default-rtdb.firebaseio.com/"    //substitua "Link_do_seu_banco_de_dados" pelo link do seu banco de dados 
-#define FIREBASE_AUTH "nU7wTUXgWghuIsW6MrLwWidhF5KEJyNrIYZ3OYUV"   //substitua "Senha_do_seu_banco_de_dados" pela senha do seu banco de dados
-
 
 #define PIN_tempSensor 34
 #define PIN_controle 25
@@ -37,44 +29,13 @@ double controlePwm = 0.0;
 double sensor = 0.0;     // graus célsius
 double prevSensor = 0.0; // temperatura anterior
 double *PprevSensor = &prevSensor;
-// funções de calculo
-double Pcalculator(double erro)
-{
-  // kp = ("entrada do usuario");
-  double P = Kp * erro;
-  return P;
-}
-double Icalculator(double erro, double erroAnterior, float tempoDecorrido)
-{
-  somaError = erro + erroAnterior;
-  double I = (Ki * somaError) * tempoDecorrido / 1000.0; // pegando o tempo em segundos
-  return I;
-}
-double Dcalculator(double tempAnterior, double tempAtual, float tempoDecorrido)
-{
-  double D = Kd * (tempAnterior - tempAtual) * tempoDecorrido / 1000.0; // pegando o tempo em segundos;
-  return D;
-}
 
 void setup()
 {
   Serial.begin(115200);
-
-
   // connect to wifi.
-  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-  Serial.print("connecting");
-  while (WiFi.status() != WL_CONNECTED) {
-    Serial.print(".");
-    delay(500);
-  }
-  Serial.println();
-  Serial.print("connected: ");
-  Serial.println(WiFi.localIP());
-
-  Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
-
-
+  extends conectarWifi();
+ 
   pinMode(PIN_tempSensor, INPUT);
   pinMode(PIN_controle, OUTPUT);
 }
