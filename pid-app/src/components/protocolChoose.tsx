@@ -1,15 +1,19 @@
-import React from 'react';
+import React from "react";
+import PrimaryBtn from "./PrimaryBtn.tsx";
+interface ProtocolChooseProps {}
 
-interface ProtocolChooseProps {
-   
-}
-
-const ProtocolChoose: React.FC<ProtocolChooseProps> = ({  }) => {
-    return (
-       <div className="input">
-        <p>Escolha o protocolo de comunicação desejável: <span>MQTT</span><span>HTPP</span></p>
-       </div>
-    );
+const ProtocolChoose: React.FC<ProtocolChooseProps> = ({}) => {
+  return (
+    <div className="input">
+      <div className="sub-sub-box">
+        <p>Escolha o protocolo de comunicação desejável:</p>
+        <div className="flex-row">
+            <PrimaryBtn Text="MQTT" />
+            <PrimaryBtn Text="HTPP" />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ProtocolChoose;

@@ -5,6 +5,7 @@ import Intro from "./components/Intro.tsx";
 import ProtocolChoose from "./components/protocolChoose.tsx";
 import Form from "./components/Form.tsx";
 import Grafico from "./components/Grafico.tsx";
+import Description from "./components/Description.tsx";
 function App() {
   return (
     <div className="App">
@@ -12,7 +13,7 @@ function App() {
         <Intro HeroText="Controle PID com esp32" />
         <Box>
           <SubBox>
-            <ProtocolChoose />
+           <Description/> 
           </SubBox>
           <SubBox>
             <Form />

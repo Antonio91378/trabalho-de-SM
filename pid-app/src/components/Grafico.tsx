@@ -4,7 +4,7 @@ import { onValue, ref, set } from "firebase/database";
 import { Chart } from "react-google-charts";
 
 interface GraficoProps {
-  children: React.ReactNode; 
+  children: React.ReactNode;
 }
 
 const Grafico: React.FC<GraficoProps> = () => {
@@ -25,7 +25,7 @@ const Grafico: React.FC<GraficoProps> = () => {
         vetores = vetores.concat([data1[`frame${i}`]]);
         setDado(vetores);
       }
-    });                                                                                                                                                                                                             
+    });
   }, []);
 
   return (
@@ -37,6 +37,9 @@ const Grafico: React.FC<GraficoProps> = () => {
         data={dado}
         options={options}
       />
+      <div className="primary-btn" id="graphic-data">
+        Resetar Gráfico
+      </div>
     </div>
   );
 };

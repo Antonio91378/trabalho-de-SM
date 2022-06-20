@@ -1,27 +1,48 @@
-import React from 'react';
+import React from "react";
 
-interface FormInputsProps {
- 
-}
+interface FormInputsProps {}
 
-const FormInputs: React.FC<FormInputsProps> = ({  }) => {
-    return (
-        <div className="form">
-            <h3>Defina as entradas</h3>
-            <div id="formInputs">
-                <a href="#">X</a>
-                <input type="text" />
-                <a href="#">X</a>
-                <input type="text" />
-                <a href="#">X</a>
-                <input type="text" />
-                <a href="#">X</a>
-                <input type="text" />
-                <a href="#">X</a>
-                <input type="text" />
-            </div>
+const FormInputs: React.FC<FormInputsProps> = ({}) => {
+  return (
+    <div className="form">
+      <p className="descrition">Defina as constantes</p>
+      <div className="form-inputs">
+        <div>
+          <p className="individual">
+            Kp<span>:</span>
+          </p>
+          <input type="text" />
         </div>
-    );
+        <div>
+          <p className="individual">
+            Ki<span>:</span>
+          </p>
+          <input type="text" />
+        </div>
+        <div>
+          <p className="individual">
+            Kd<span>:</span>
+          </p>
+          <input type="text" />
+        </div>
+        <div>
+          <p className="individual">
+            N<span>:</span>
+          </p>
+          <input type="text" />
+        </div>
+        <div>
+          <p className="individual">
+            T<span>:</span>
+          </p>
+          <input type="text" />
+        </div>
+      </div>
+      <div className="primary-btn" id="input-save">
+        Salvar
+      </div>
+    </div>
+  );
 };
 
 export default FormInputs;
